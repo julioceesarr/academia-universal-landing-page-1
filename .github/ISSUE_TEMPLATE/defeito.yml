@@ -1,0 +1,24 @@
+name: Defeito
+description: Relate um erro encontrado
+title: 'fix: '
+labels: ['defeito']
+body:
+  - type: input
+    id: versao
+    attributes:
+      label: Versão / ambiente
+      description: 'Tag do site publicado (ex.: "v1.0.0") ou data da publicação, e navegador/dispositivo'
+    validations:
+      required: true
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Resultado esperado x obtido
+    validations:
+      required: true
