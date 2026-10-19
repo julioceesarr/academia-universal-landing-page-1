@@ -1,10 +1,10 @@
 # Academia Universal — Landing Page
 
-Landing page estática para a Academia Universal, desenvolvida como projeto de apoio à Atividade Avaliativa II (Plano de Gerenciamento de Configuração de Software — enfoque DevOps).
+Landing page estática da Academia Universal, desenvolvida como projeto das atividades de Gerência de Configuração de Software (PGCS com enfoque DevOps).
 
 ## Sobre o projeto
 
-Site de página única (one-page) apresentando a academia, planos de matrícula, modalidades oferecidas, depoimentos de alunos e formulário de contato com validação nativa do HTML.
+Site de página única apresentando a academia, planos de matrícula, modalidades, depoimentos de alunos e formulário de contato com validação nativa do HTML.
 
 ## Tecnologias
 
@@ -15,32 +15,49 @@ Site de página única (one-page) apresentando a academia, planos de matrícula,
 ## Estrutura do repositório
 
 ```
-academia-universal-landing/
-├── index.html          # Estrutura da página
+academia-universal-landing-page-1/
+├── index.html
+├── README.md
+├── .gitignore
+├── .gitattributes
 ├── css/
-│   └── style.css        # Estilos
+│   └── style.css
 ├── docs/
-│   └── PGCS.pdf         # Plano de Gerência de Configuração de Software
-└── README.md
+│   ├── PGCS.pdf
+│   └── adr/
+└── .github/
+    ├── CODEOWNERS
+    ├── pull_request_template.md
+    └── ISSUE_TEMPLATE/
 ```
 
 ## Como rodar localmente
 
-Não há build nem dependências. Basta abrir o `index.html` diretamente no navegador, ou servir a pasta com qualquer servidor estático:
+Não há build nem dependências. Abra o `index.html` no navegador ou sirva a pasta:
 
-```bash
-# Python
+```
 python3 -m http.server 8000
-
-# Node (http-server)
-npx http-server .
 ```
 
 Depois acesse `http://localhost:8000`.
 
+## Como testar
+
+- Valide o HTML em https://validator.w3.org/ (sem erros).
+- Use o DevTools do navegador para conferir o layout em celular e computador.
+- Confira os links do menu, os botões e a validação do formulário.
+
+## Dependências e variáveis de ambiente
+
+O projeto não tem dependências gerenciadas nem variáveis de ambiente, por isso não há lockfile nem `.env.example`. A única dependência externa é o Google Fonts (CDN), com fontes alternativas no CSS.
+
+## Fluxo de contribuição
+
+Issue → branch (`feature/`, `fix/` ou `docs/`) → Pull Request com checklist → squash merge na `main`. A `main` é protegida: não aceita push direto. Commits seguem Conventional Commits (`feat`, `fix`, `style`, `docs`, `content`). Detalhes no [PGCS](docs/PGCS.pdf).
+
 ## Deploy
 
-Projeto compatível com GitHub Pages: em **Settings → Pages**, selecione a branch `main` e a pasta raiz (`/`).
+GitHub Pages: em **Settings → Pages**, branch `main`, pasta raiz (`/`).
 
 ## Autor
 
