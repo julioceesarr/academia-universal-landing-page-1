@@ -1,0 +1,27 @@
+name: Funcionalidade
+description: Proponha uma nova seção, funcionalidade ou melhoria
+title: 'feat: '
+labels: ['funcionalidade']
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: Qual necessidade da academia isto atende?
+    validations:
+      required: true
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Critérios de aceitação
+      placeholder: |
+        - [ ] O visitante consegue...
+        - [ ] A página mantém...
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      options: [hero, planos, modalidades, depoimentos, contato, rodapé, estilos (css), documentação]
+    validations:
+      required: true
