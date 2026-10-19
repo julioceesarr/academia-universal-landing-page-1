@@ -1,0 +1,7 @@
+# Normaliza finais de linha: evita CRLF do Windows nos arquivos do repositório.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.pdf binary
