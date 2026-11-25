@@ -1,0 +1,12 @@
+{
+  "name": "academia-universal-landing-page",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page da Academia Universal",
+  "scripts": {
+    "test": "node --test tests/formulario.test.js"
+  },
+  "devDependencies": {
+    "jsdom": "^25.0.1"
+  }
+}
