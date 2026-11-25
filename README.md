@@ -17,15 +17,19 @@ Site de página única apresentando a academia, planos de matrícula, modalidade
 ```
 academia-universal-landing-page-1/
 ├── index.html
+├── package.json
 ├── README.md
 ├── .gitignore
 ├── .gitattributes
 ├── css/
 │   └── style.css
+├── tests/
+│   └── formulario.test.js
 ├── docs/
 │   ├── PGCS.pdf
 │   └── adr/
 └── .github/
+    ├── workflows/ci.yml
     ├── CODEOWNERS
     ├── pull_request_template.md
     └── ISSUE_TEMPLATE/
@@ -43,13 +47,24 @@ Depois acesse `http://localhost:8000`.
 
 ## Como testar
 
+Testes automatizados (Node.js 22):
+
+```
+npm install
+npm test
+```
+
+O teste `tests/formulario.test.js` carrega o `index.html` com jsdom e verifica as regras do formulário (ex.: idade mínima de 14 anos). O workflow `.github/workflows/ci.yml` executa esses testes em todo Pull Request para a `main`.
+
+Verificações manuais:
+
 - Valide o HTML em https://validator.w3.org/ (sem erros).
 - Use o DevTools do navegador para conferir o layout em celular e computador.
 - Confira os links do menu, os botões e a validação do formulário.
 
 ## Dependências e variáveis de ambiente
 
-O projeto não tem dependências gerenciadas nem variáveis de ambiente, por isso não há lockfile nem `.env.example`. A única dependência externa é o Google Fonts (CDN), com fontes alternativas no CSS.
+O site em si não tem dependências nem build: continua sendo HTML e CSS puros. A única dependência de desenvolvimento é o `jsdom`, declarada no `package.json` e usada apenas pelos testes. Não há variáveis de ambiente, por isso não há `.env.example`. A dependência externa do site é o Google Fonts (CDN), com fontes alternativas no CSS.
 
 ## Fluxo de contribuição
 
